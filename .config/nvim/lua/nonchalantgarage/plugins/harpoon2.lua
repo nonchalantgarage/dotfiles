@@ -43,19 +43,19 @@ return {
         :find()
     end
 
-    vim.keymap.set("n", "<leader>hm", function()
-      harpoon:list():add()
-    end, { desc = "Harpoon file" })
+		vim.keymap.set("n", "<leader>hm", function()
+			harpoon:list():add()
+		end, { desc = "Harpoon file" })
 
-    vim.keymap.set("n", "<leader>hq", function()
-      toggle_telescope(harpoon:list())
-    end, { desc = "Open harpoon window" })
+		vim.keymap.set("n", "<leader>hq", function()
+			toggle_telescope(harpoon:list())
+		end, { desc = "Open harpoon window" })
 
-    vim.keymap.set("n", "<leader>hp", function()
-      harpoon:list():prev()
-    end)
-    vim.keymap.set("n", "<leader>hn", function()
-      harpoon:list():next()
-    end)
-  end,
+		vim.keymap.set("n", "<leader>hp", function()
+			harpoon:list():prev()
+		end, { desc = "Open previous mark" })
+		vim.keymap.set("n", "<leader>hn", function()
+			harpoon:list():next()
+		end, { desc = "Open next mark" })
+	end,
 }
