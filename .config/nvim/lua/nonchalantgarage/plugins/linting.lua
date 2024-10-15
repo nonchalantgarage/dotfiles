@@ -23,13 +23,13 @@ return {
     })
 
     -- Autocmd for running eslint_d --fix on save
-    vim.api.nvim_create_autocmd("BufWritePre", {
+    vim.api.nvim_create_autocmd("BufWritePost", {
       pattern = { "*.js", "*.ts", "*.jsx", "*.tsx" }, -- Specify file types
       group = lint_augroup,
       callback = function()
         vim.cmd("silent! !eslint_d --fix %")
         -- Reload the file after eslint_d modifies it
-        vim.cmd("edit!") -- Reload the buffer to reflect eslint_d changes without prompt
+        vim.cmd("checktime")
       end,
     })
 
